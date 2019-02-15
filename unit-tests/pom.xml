@@ -56,7 +56,7 @@
 
         <dependency>
             <groupId>com.sap.cloud.s4hana.cloudplatform</groupId>
-            <artifactId>scp-cf</artifactId>
+            <artifactId>scp-neo</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -78,11 +78,6 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

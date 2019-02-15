@@ -19,9 +19,9 @@
         <surefire.skipTests>false</surefire.skipTests>
         <surefire.forkCount>1</surefire.forkCount>
         <surefire.include>*</surefire.include>
-        <surefire.exclude/>
-        <surefire.groups/>
-        <surefire.excludedGroups/>
+        <surefire.exclude />
+        <surefire.groups />
+        <surefire.excludedGroups />
         <surefire.maxMemorySize>1024m</surefire.maxMemorySize>
         <surefire.logLevel>info</surefire.logLevel>
 
@@ -46,17 +46,11 @@
             <artifactId>address-manager-application</artifactId>
             <classifier>classes</classifier>
             <version>1.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>com.sap.cloud.s4hana.cloudplatform</groupId>
-            <artifactId>scp-cf</artifactId>
+            <artifactId>scp-neo</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -134,50 +128,70 @@
             <artifactId>tomee-jaxrs</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.sap.cloud</groupId>
+            <artifactId>neo-javaee7-wp-api</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.2</version>
+                    <configuration>
+                        <destFile>${jacoco.executionDataFile}</destFile>
+                        <dataFile>${jacoco.executionDataFile}</dataFile>
+                        <includes>${jacoco.includes}</includes>
+                        <excludes>${jacoco.excludes}</excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M2</version>
+                    <configuration>
+                        <skipTests>${surefire.skipTests}</skipTests>
+                        <includes>
+                            <include>${surefire.include}</include>
+                        </includes>
+                        <excludes>
+                            <exclude>${surefire.exclude}</exclude>
+                        </excludes>
+                        <forkCount>${surefire.forkCount}</forkCount>
+                        <reuseForks>false</reuseForks>
+                        <groups>${surefire.groups}</groups>
+                        <excludedGroups>${surefire.excludedGroups}</excludedGroups>
+                        <systemPropertyVariables>
+                            <surefire.forkDir>${project.build.directory}/surefire-fork/${surefire.forkNumber}/</surefire.forkDir>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.2</version>
-                <configuration>
-                    <destFile>${jacoco.executionDataFile}</destFile>
-                    <dataFile>${jacoco.executionDataFile}</dataFile>
-                    <includes>${jacoco.includes}</includes>
-                    <excludes>${jacoco.excludes}</excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M1</version>
-                <configuration>
-                    <skipTests>${surefire.skipTests}</skipTests>
-                    <includes>
-                        <include>${surefire.include}</include>
-                    </includes>
-                    <excludes>
-                        <exclude>${surefire.exclude}</exclude>
-                    </excludes>
-                    <forkCount>${surefire.forkCount}</forkCount>
-                    <reuseForks>false</reuseForks>
-                    <groups>${surefire.groups}</groups>
-                    <excludedGroups>${surefire.excludedGroups}</excludedGroups>
-                    <systemPropertyVariables>
-                        <surefire.forkDir>${project.build.directory}/surefire-fork/${surefire.forkNumber}/</surefire.forkDir>
-                    </systemPropertyVariables>
-                </configuration>
             </plugin>
         </plugins>
     </build>
