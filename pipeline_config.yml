@@ -6,7 +6,7 @@ steps:
 stages:
   productionDeployment:
     neoTargets:
-      - host: 'account.hanatrial.ondemand.com'
+      - host: 'hanatrial.ondemand.com'
         account: 'p2001099548trial'
         application: 'devopsdockerimagesITneo'
         credentialsId: 'devops-docker-images-IT-cf'
