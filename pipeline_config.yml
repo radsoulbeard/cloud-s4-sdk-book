@@ -8,7 +8,7 @@ stages:
     neoTargets:
       - host: 'hanatrial.ondemand.com'
         account: 'p2001099548trial'
-        application: 'devopsdockerimagesITneo'
+        application: 'devopsdockerimagesitonneo'
         credentialsId: 'devops-docker-images-IT-cf'
         runtime: 'neo-javaee7-wp'
         runtimeVersion: '1'
