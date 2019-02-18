@@ -1,8 +1,5 @@
 general:
-  productiveBranch: 'infrastructure-integration-test-neo'
-steps:
-  deployToNeoWithCli:
-    dockerImage: 'localhost:5000/ppiper/neo-cli'
+  productiveBranch: 'consumer-test-neo'
 stages:
   productionDeployment:
     neoTargets:
