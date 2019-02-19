@@ -6,8 +6,8 @@ steps:
 stages:
   productionDeployment:
     neoTargets:
-      - host: 'hanatrial.ondemand.com'
-        account: 'p2001099548trial'
+      - host: 'eu1.hana.ondemand.com'
+        account: 's7am47zded'
         application: 'devopsdockerimagesitonneo'
         credentialsId: 'devops-docker-images-IT-cf'
         runtime: 'neo-javaee7-wp'
