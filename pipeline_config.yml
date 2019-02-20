@@ -1,5 +1,6 @@
 general:
   productiveBranch: 'consumer-test-neo'
+  collectTelemetryData: false
 stages:
   productionDeployment:
     neoTargets:
