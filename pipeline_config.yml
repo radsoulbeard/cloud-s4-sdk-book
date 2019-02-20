@@ -1,5 +1,6 @@
 general:
   productiveBranch: 'infrastructure-integration-test'
+  collectTelemetryData: false
 steps:
   cloudFoundryDeploy:
     dockerImage: localhost:5000/ppiper/cf-cli
