@@ -1,5 +1,6 @@
 general:
   productiveBranch: 'infrastructure-integration-test-neo'
+  collectTelemetryData: false
 steps:
   deployToNeoWithCli:
     dockerImage: 'localhost:5000/ppiper/neo-cli'
