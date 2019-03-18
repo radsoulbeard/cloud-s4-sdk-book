@@ -1,5 +1,5 @@
 general:
-  productiveBranch: 'consumer-test-neo-wo-deploy'
+  productiveBranch: 'consumer-test-neo'
   collectTelemetryData: false
 stages:
   productionDeployment:
