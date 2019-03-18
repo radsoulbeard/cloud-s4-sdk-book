@@ -1,8 +1,8 @@
 general:
-  productiveBranch: 'consumer-test-neo'
+  productiveBranch: 'consumer-test-neo-wo-deploy'
   collectTelemetryData: false
 stages:
-  productionDeploymentSkip:
+  productionDeployment:
     neoTargets:
       - host: 'eu1.hana.ondemand.com'
         account: 's7am47zded'
