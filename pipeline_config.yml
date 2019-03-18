@@ -5,6 +5,10 @@ steps:
   cloudFoundryDeploy:
     dockerImage: localhost:5000/ppiper/cf-cli
 stages:
+  npmAudit:
+    auditedAdvisories:
+      - "146"
+      - "593"
   productionDeployment:
     cfTargets:
       - org: 'P2001099548trial_trial'
