@@ -1,0 +1,30 @@
+{
+  "name": "cloud-s4-sdk-book",
+  "version": "1.0.0",
+  "description": "Smoke tests for address manager app",
+  "main": "index.js",
+  "scripts": {
+    "ci-smoke": "cd e2e-tests && nightwatch --skiptags=ignore"
+  },
+  "author": "SAP",
+  "private": true,
+  "devDependencies": {
+    "chromedriver": "^2.38.2",
+    "cucumber": "^4.2.1",
+    "cucumber-html-report": "^0.6.5",
+    "cucumber-junit": "^1.7.1",
+    "jasmine": "^2.99.0",
+    "growl": "^1.10.5",
+    "http-proxy-agent": "^2.1.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.2",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-openui5": "^0.2.3",
+    "nightwatch": "^0.9.21",
+    "nightwatch-cucumber": "^9.1.3",
+    "npm": "^6.5.0",
+    "yargs": "^6.6.0"
+  }
+}
