@@ -12,6 +12,7 @@ stages:
       - "146"
       - "593"
       - "607"
+      - "803"
   productionDeployment:
     cfTargets:
       - org: 'P2001099548trial_trial'
