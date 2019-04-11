@@ -2,6 +2,9 @@ general:
   productiveBranch: 'consumer-test-neo'
   collectTelemetryData: false
 stages:
+  npmAudit:
+    auditedAdvisories:
+      - 803
   productionDeployment:
     neoTargets:
       - host: 'eu1.hana.ondemand.com'
