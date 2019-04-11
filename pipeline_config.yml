@@ -5,6 +5,9 @@ steps:
   deployToNeoWithCli:
     dockerImage: 'localhost:5000/ppiper/neo-cli'
 stages:
+  npmAudit:
+    auditedAdvisories:
+      - 803
   productionDeployment:
     neoTargets:
       - host: 'eu1.hana.ondemand.com'
