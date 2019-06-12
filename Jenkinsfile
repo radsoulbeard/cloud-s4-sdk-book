@@ -1,3 +1,4 @@
+@Library("piper-lib-os") _
 
 node {
     deleteDir()
