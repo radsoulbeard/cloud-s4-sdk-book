@@ -5,7 +5,7 @@ steps:
   cloudFoundryDeploy:
     dockerImage: localhost:5000/ppiper/cf-cli
   mtaBuild:
-    dockerImage: ppiper/mta-archive-builder
+    dockerImage: localhost:5000/ppiper/mta-archive-builder
 stages:
   productionDeployment:
     cfTargets:
